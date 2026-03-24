@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: sample-pipeline-run
+spec:
+  pipelineRef:
+    name: sample-pipeline
+  params:
+    - name: repo-url
+      value: https://github.com/your-username/your-repo
+  workspaces:
+    - name: shared-workspace
+      emptyDir: {}
